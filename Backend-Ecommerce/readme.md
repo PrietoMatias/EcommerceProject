@@ -19,3 +19,6 @@ Realizados los schemas restantes tales como:
 Los modelos ya están hechos, solo falta testeo.
 
 ---
+
+#Prieto Matias- Tercer commit: 09/07/2024
+Agregado un par de controladores en usuario y admin

@@ -20,5 +20,18 @@ const createUser = async (req:Request, res:Response):Promise<void>=>{
         res.status(400).json({error})
     }
 }
+const deleteUser = async(req:Request, res:Response):Promise<void> =>{
+    const id = req.params.id
+    try {
+        const result = await User.findByIdAndDelete({_id: id})
+        if(!result){
+            res.status(404).json({message: 'Usuario no encontrado'})
+            return;
+        }
+        res.status(200).json({message: 'Usuario eliminado con éxito'})
+    } catch (error) {
+        res.status(500).json({error: error})
+    }
+}
 
-export default {getUser, createUser}
+export default {getUser, createUser, deleteUser}
