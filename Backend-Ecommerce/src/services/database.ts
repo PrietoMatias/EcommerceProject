@@ -1,7 +1,8 @@
 import mongoose from 'mongoose'
 
 //Add the extension of MongoDB for VScode and page this connection string
-const uri:string = 'mongodb+srv://gentsgentleman:gentsgentleman7743@clauster1.zfn7x48.mongodb.net/?retryWrites=true&w=majority/ecommerceFlowerClothes'
+const uri: string = 'mongodb+srv://gentsgentleman:gentsgentleman7743@clauster1.zfn7x48.mongodb.net/EcommerceFlowerClothes?retryWrites=true&w=majority';
+
 
 const connection = async():Promise<void> =>{
     try {

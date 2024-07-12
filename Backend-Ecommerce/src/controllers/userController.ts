@@ -10,14 +10,25 @@ const getUser = async(_req:Request, res:Response):Promise<void>=>{
     }
 }
 
-const createUser = async (req:Request, res:Response):Promise<void>=>{
-   const {name, surname, mail, birth, location, postalcode, phone, password} = req.body
-   const user = new User({name, surname, mail, birth, location, postalcode, phone, password})
+const createUser = async (req: Request, res: Response): Promise<void> => {
+    const { name, surname, mail, birth, location, postalcode, phone, password } = req.body;
+
+    if (!name || !surname || !mail || !birth || !location || !postalcode || !phone || !password) {
+        res.status(400).json({ message: 'Todos los campos son requeridos' });
+        return;
+    }
+
+    const user = new User({ name, surname, mail, birth, location, postalcode, phone, password });
+
     try {
-        const result = await user.save()
-        res.status(201).json({message: 'Usuario Creado con éxito'})
-    } catch (error) {
-        res.status(400).json({error})
+        const result = await user.save();
+        res.status(201).json({ message: 'Usuario creado con éxito', user: result });
+    } catch (error:any) {
+        if (error.code === 11000) {
+            res.status(400).json({ message: 'El email ya existe' });
+        } else {
+            res.status(400).json({ message: 'Error al crear usuario', error });
+        }
     }
 }
 const deleteUser = async(req:Request, res:Response):Promise<void> =>{

@@ -59,3 +59,15 @@ const getByName = async (req:Request, res:Response):Promise<void> =>{
         res.status(500).json({message: error})
     }
 }
+
+const createProduct = async (req:Request, res:Response):Promise<void>=>{
+    const {name, description, price, stock, category, images, sizes, colors} = req.body
+    try {
+        const newProduct = await Products.create({name, description, price, stock, category, images, sizes, colors })
+        res.status(201).json({message: 'Producto agregado con éxito'})
+    } catch (error) {
+        res.status(500).json({message: error})
+    }
+}
+
+export default {getAllProducts, getByID, getByName, updateByID, deleteById, createProduct}
