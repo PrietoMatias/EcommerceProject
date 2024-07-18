@@ -27,3 +27,10 @@ Agregado un par de controladores en usuario y admin
 
 #Prieto Matias- Actualización: 12/07/2024
 Testeo de controladores de usuario y corrección al momento de crear usuario
+
+
+#Prieto Matias- Actualización: 18/07/2024
+Después de una semana me encargué de hacer las validaciones para el admin y el usuario
+instalé dos librerías más, 'JsonWebToken' y 'ExpressSession'. verifico roles para ver si es admin y que clase de admin es (si es supervisor, contador, general, etc) para delegar funciones y demás. 
+Hice dos archivos que define los tipos de un par de cosas para que deje de dar errores de tipado.
+Lo siguente que voy hacer es hacer los controladores de login y de registro para usuario, también hay que hacer del deslogueo.
