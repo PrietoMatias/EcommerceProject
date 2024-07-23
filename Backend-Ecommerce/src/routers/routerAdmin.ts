@@ -9,6 +9,8 @@ router.post('/login/admin', adminController.login)
 router.get('/home/admin', authAdmin, (_req, res)=>{
     const user = res.locals.user;
     res.json({ message: `Welcome ${user.username}` });
-})
+}) // Esto es para verificar la protección de la ruta
+router.post('/logout/admin', authAdmin, adminController.logout)
+
 
 export default router

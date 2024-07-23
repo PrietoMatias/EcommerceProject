@@ -39,3 +39,7 @@ Lo siguente que voy hacer es hacer los controladores de login y de registro para
 
 # Prieto Matias- Actualización: 22/07/2024
 Agregada los controladores de crear y login de administradores, modificación del uso de los tipos de los Request (index.d.ts quedó inutilizada, algún uso le daremos más adelante). Hay un error en al momento de crear el admin.
+
+# Prieto Matías- Actualización: 23/07/2024
+Creada el controlador y testeado de logout, testeado el controlador de login.
+También he creado una carpeta de "Requests" que sirve para realizar solicitudes http con la extensión "REST Client" de vs code. Solicionado el error que no dejaba crear admin.

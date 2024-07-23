@@ -13,10 +13,15 @@ const login = async(req:Request, res:Response):Promise<void>=>{
         const token = generateToken({id: searchAdmin._id, username: searchAdmin.username, role: searchAdmin.role})
         res.cookie('token', token, { httpOnly: true, secure: process.env.NODE_ENV === 'production' })
 
-        res.status(200).json({ message: 'Login exitoso', token });
+        res.status(200).json({ message: 'Success login', token });
     } catch (error) {
         res.status(500).json({ message: error });
     }
+}
+
+const logout = (_req:Request, res:Response)=>{
+    res.cookie('token', '', {httpOnly: true, secure: process.env.NODE_ENV === 'production'})
+    res.status(200).json({message: 'Success logout'})
 }
 
 const createAdmin = async (req:Request, res:Response):Promise<void> =>{
@@ -36,5 +41,5 @@ const createAdmin = async (req:Request, res:Response):Promise<void> =>{
     }
 }
 
-export default {login, createAdmin}
+export default {login, logout, createAdmin}
 

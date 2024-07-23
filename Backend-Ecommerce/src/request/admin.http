@@ -1,0 +1,37 @@
+### CREANDO ADMIN
+
+POST http://localhost:3000/api/create/admin
+Content-Type: application/json
+
+{
+    "name": "Matias",
+    "surname": "Prieto",
+    "username": "mati123",
+    "password": "mati1",
+    "mail": "matiashernan132@gmail.com",
+    "birth": "01/08/2004",
+    "location": "San Miguél de Tucuman",
+    "role": "supervisor",
+    "number_phone": "3816079212"
+}
+
+### LOGIN DEL ADMIN
+
+POST http://localhost:3000/api/login/admin
+Content-Type: application/json
+
+
+{
+    "user": "mary123",
+    "password": "mary1"
+}
+
+### VERIFICAR SI EL TOKEN SE INCLUYÓ CORRECTAMENTE
+
+GET http://localhost:3000/api/home/admin
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YTAzNDE1NWVmYmUxZGNjNDc2NGRlNiIsInVzZXJuYW1lIjoibWFyeTEyMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMTc3NTUxMSwiZXhwIjoxNzIxNzc5MTExfQ.xw46X099l1w0tursGVad_glnCRT0H61_vRMv7-S9-ww
+
+### LOGOUT
+
+POST http://localhost:3000/api/logout/admin 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YTAzNDE1NWVmYmUxZGNjNDc2NGRlNiIsInVzZXJuYW1lIjoibWFyeTEyMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMTc3NTUxMSwiZXhwIjoxNzIxNzc5MTExfQ.xw46X099l1w0tursGVad_glnCRT0H61_vRMv7-S9-ww
