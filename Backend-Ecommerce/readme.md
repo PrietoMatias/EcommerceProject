@@ -1,45 +1,43 @@
-# Prieto Matias- Primer commit: 05/07/2024
-Me encargue de hacer la base del servidor, de agregar un par de controladores, 
-y de conectar a base de datos. IMPORTANTE: para que trabajemos eficientemente te recomiendo
-a vos, gordito, agarrar la cadena conección, descargar mongodb for vscode y colocarla ahí para que tengamos el mismo acceso a todos los datos y puedamos trabajar eficiente mente.
-En este mismo repositorio voy a colocar la carpeta del frontend.
+# Cambios y Actualizaciones del Proyecto
 
----
+## Prieto Matías - Primer commit: 05/07/2024
+- Se creó la base del servidor.
+- Se agregaron algunos controladores y se conectó a la base de datos.
+- **IMPORTANTE**: Para trabajar de manera eficiente, te recomiendo que descargues MongoDB para VS Code y utilices la cadena de conexión proporcionada para tener acceso a los mismos datos. También se agregará la carpeta del frontend en este repositorio.
 
-# Prieto Matias- Actualización: 06/07/2024
-Realizados los schemas restantes tales como:
-1-schemaCart: Documento para el carrito
-2-schemaOrder:Documento para las ordenes de compra
-3-schemaReview:Documento para las reviews en los productos
-4-schemaSuppliers: Documento para los proveedores
-5-schemaInventory:Documento para ver todos los productos en general en inventario
-6-schemaConfig: Documento para la configuración del sitio
-7-schemaUser: Documento para los usuarios
-8-schemaProducts: Documentos para la estructura general de los productos
-Los modelos ya están hechos, solo falta testeo.
+## Prieto Matías - Actualización: 06/07/2024
+- Se realizaron los siguientes esquemas:
+  1. **schemaCart**: Documento para el carrito.
+  2. **schemaOrder**: Documento para las órdenes de compra.
+  3. **schemaReview**: Documento para las reseñas de productos.
+  4. **schemaSuppliers**: Documento para los proveedores.
+  5. **schemaInventory**: Documento para el inventario de productos.
+  6. **schemaConfig**: Documento para la configuración del sitio.
+  7. **schemaUser**: Documento para los usuarios.
+  8. **schemaProducts**: Documento para la estructura de los productos.
+- Los modelos están hechos, solo falta realizar pruebas.
 
----
+## Prieto Matías - Actualización: 09/07/2024
+- Se agregaron algunos controladores en los módulos de usuario y admin.
 
-# Prieto Matias- Actualización: 09/07/2024
-Agregado un par de controladores en usuario y admin
+## Prieto Matías - Actualización: 12/07/2024
+- Se realizaron pruebas de los controladores de usuario.
+- Se corrigió un problema al crear un usuario.
 
----
+## Prieto Matías - Actualización: 18/07/2024
+- Se realizaron validaciones para admin y usuario.
+- Se instalaron las librerías `JsonWebToken` y `ExpressSession`.
+- Se implementó la verificación de roles para administrar distintos tipos de admins (supervisor, contador, general, etc.).
+- Se crearon archivos de definición de tipos para solucionar errores de tipado.
+- Próximos pasos: Implementar controladores de login y registro para usuarios, y también para el logout.
 
-# Prieto Matias- Actualización: 12/07/2024
-Testeo de controladores de usuario y corrección al momento de crear usuario
+## Prieto Matías - Actualización: 22/07/2024
+- Se agregaron controladores para la creación y login de administradores.
+- Se modificó el uso de los tipos en `Request` (se dejó `index.d.ts` sin uso por ahora).
+- Se identificó un error al crear administradores.
 
-
-# Prieto Matias- Actualización: 18/07/2024
-Después de una semana me encargué de hacer las validaciones para el admin y el usuario
-instalé dos librerías más, 'JsonWebToken' y 'ExpressSession'. verifico roles para ver si es admin y que clase de admin es (si es supervisor, contador, general, etc) para delegar funciones y demás. 
-Hice dos archivos que define los tipos de un par de cosas para que deje de dar errores de tipado.
-Lo siguente que voy hacer es hacer los controladores de login y de registro para usuario, también hay que hacer del deslogueo.
-
----
-
-# Prieto Matias- Actualización: 22/07/2024
-Agregada los controladores de crear y login de administradores, modificación del uso de los tipos de los Request (index.d.ts quedó inutilizada, algún uso le daremos más adelante). Hay un error en al momento de crear el admin.
-
-# Prieto Matías- Actualización: 23/07/2024
-Creada el controlador y testeado de logout, testeado el controlador de login.
-También he creado una carpeta de "Requests" que sirve para realizar solicitudes http con la extensión "REST Client" de vs code. Solicionado el error que no dejaba crear admin.
+## Prieto Matías - Actualización: 23/07/2024
+- Se creó y probó el controlador de logout.
+- Se probó el controlador de login.
+- Se creó una carpeta llamada "Requests" para realizar solicitudes HTTP con la extensión "REST Client" de VS Code.
+- Se solucionó el error que impedía la creación de administradores.
