@@ -10,6 +10,7 @@ export interface IShoppingHistory {
 export interface IUser extends Document {
   name: string;
   surname: string;
+  username: string;
   mail: string;
   birth: Date;
   location: string;

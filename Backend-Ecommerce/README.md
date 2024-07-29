@@ -41,3 +41,11 @@
 - Se probó el controlador de login.
 - Se creó una carpeta llamada "Requests" para realizar solicitudes HTTP con la extensión "REST Client" de VS Code.
 - Se solucionó el error que impedía la creación de administradores.
+
+## Prieto Matías - Actualización: 29/07/2024
+- Creado controladores de actualizar, eliminar y obtener todos los admins.
+- Bug que impide las validaciones de los campos próximo a corregir.  
+- Controladores de login, logout creados para usuario.
+- Cambios en la interfaz de `tokePlayload` y en la función  `generateToken` para que permita rol nulo
+- Controladores sin testear por falta de tiempo.
+- Rutas protegidas sin comprobar 

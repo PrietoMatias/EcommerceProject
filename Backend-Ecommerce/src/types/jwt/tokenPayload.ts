@@ -1,5 +1,5 @@
 export interface TokenPayload {
     id: unknown;
     username: string;
-    role: string; 
+    role: string | null; 
 }

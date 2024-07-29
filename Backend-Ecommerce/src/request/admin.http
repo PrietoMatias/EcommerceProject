@@ -4,18 +4,23 @@ POST http://localhost:3000/api/create/admin
 Content-Type: application/json
 
 {
-    "name": "Matias",
-    "surname": "Prieto",
+    "name": "Patito",
+    "surname": "Mimoso",
     "username": "mati123",
     "password": "mati1",
-    "mail": "matiashernan132@gmail.com",
+    "mail": "matias132@gmail.com",
     "birth": "01/08/2004",
     "location": "San Miguél de Tucuman",
     "role": "supervisor",
     "number_phone": "3816079212"
 }
 
-### LOGIN DEL ADMIN
+### GET ADMINS
+
+GET http://localhost:3000/api/get/admins
+
+
+### LOGIN ADMIN
 
 POST http://localhost:3000/api/login/admin
 Content-Type: application/json
@@ -35,3 +40,25 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YTAzNDE1N
 
 POST http://localhost:3000/api/logout/admin 
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YTAzNDE1NWVmYmUxZGNjNDc2NGRlNiIsInVzZXJuYW1lIjoibWFyeTEyMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMTc3NTUxMSwiZXhwIjoxNzIxNzc5MTExfQ.xw46X099l1w0tursGVad_glnCRT0H61_vRMv7-S9-ww
+
+
+###  UPDATE ADMIN
+PUT http://localhost:3000/api/update/admin/66a03b425efbe1dcc4764de9
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YTAzNDE1NWVmYmUxZGNjNDc2NGRlNiIsInVzZXJuYW1lIjoibWFyeTEyMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMjI2NjQwOCwiZXhwIjoxNzIyMjcwMDA4fQ.IcdetRS6UPTDOezJrCMywr_UPpbuLWrwZn8l7SKUsmM
+
+{
+    "name": "Matías",
+    "surname": "Prietto",
+    "username": "mat123",
+    "password": "mati1",
+    "mail": "matiashernan132@gmail.com",
+    "birth": "01/08/2004",
+    "location": "San Miguél de Tucuman",
+    "role": "supervisor",
+    "number_phone": "3816079212"
+}
+
+### DELETE ADMIN
+
+DELETE http://localhost:3000/api/delete/admin/66a7c2abb2f09d6d25663f52
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YTAzNDE1NWVmYmUxZGNjNDc2NGRlNiIsInVzZXJuYW1lIjoibWFyeTEyMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMjI3MDQxNiwiZXhwIjoxNzIyMjc0MDE2fQ.Nh-WabTGpv8o6AeyxpoJcHV6wRzNqQW3yHsDdcnsQJI

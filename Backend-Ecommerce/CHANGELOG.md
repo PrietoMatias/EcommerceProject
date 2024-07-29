@@ -2,6 +2,16 @@
 
 Todos los cambios importantes en este proyecto se documentarán en este archivo. Una visión mas técnica de los cambios y los repositorios como tal. **IMPORTANTE**: Los cambios van desde abajo para arriba, siendo arriba los cambios más actuales.
 
+## [1.0.2] - 2024-07-29
+### Añadido
+- Controlador de actualizar, eliminar con sus correspondientes rutas en administradores.
+- Añadido más solicitudos http en la archivo "admin.http" 
+- Error en el momento de validar si todos los campos están correctos la función "updateAdmin"
+- Añadido controladores de actualizar usuarios y sus respectivos controladors y endpoints de login y  logout.
+- Pequeños cambios en la interfaz de `tokenPlayload` y en la funcion de `generateToken` para que permita el rol de tipo nulo. Así nos ahorramos de crear otra interfaz para usuarios.
+- Falta testear los endpoints de actualizar usuarios y verificar si se loguea y se desloguea correctamnete.
+- Falta verificar las rutas protegidas de user.
+
 ## [1.0.1] - 2024-07-23
 ### Añadido
 - Controlador de logout creado y probado.

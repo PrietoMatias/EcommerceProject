@@ -7,7 +7,7 @@ dotenv.config()
 
 const secret = process.env.JWT_SECRET  || generateSecret()
 
-export const generateToken = (playload: { id: unknown, username: string, role: string })=>{
+export const generateToken = (playload: { id: unknown, username: string, role: string | null })=>{
     return jwt.sign(playload, secret, {expiresIn: '1h'})
 }
 

@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 import { User } from "../services/models/modelUser";
+import { generateToken } from "../config/jsw";
 //We must use "_" to take off the alert of unused parameters
 const getUser = async(_req:Request, res:Response):Promise<void>=>{
     try {
@@ -45,4 +46,48 @@ const deleteUser = async(req:Request, res:Response):Promise<void> =>{
     }
 }
 
-export default {getUser, createUser, deleteUser}
+const updateUser = async(req:Request, res:Response):Promise<void>=>{
+    const { name, surname, mail, birth, location, postalcode, phone, password } = req.body;
+    const idUser = req.params.id
+    if (!name || !surname || !mail || !birth || !location || !postalcode || !phone || !password) {
+        res.status(400).json({ message: 'Todos los campos son requeridos' });
+        return;
+    }
+    try {
+        const updateUser = await User.findByIdAndUpdate(idUser, 
+            {name, surname, mail, birth, location, postalcode, phone, password},
+            {new: true})
+
+        if(!updateUser) {
+        res.status(404).json({message:'Usuario no encontrado'})
+        return
+    }
+    res.status(200).json({message: 'Usuario actualizado con éxito'})
+    } catch (error) {
+        res.status(500).json({message: 'Error interno del servidor', error})
+    }
+}
+
+const login = async (req:Request, res:Response):Promise<void>=>{
+    const {user, password} = req.body
+    try {
+        const searchUser = await User.findOne({username: user, password: password})
+        if(!searchUser){
+            res.status(404).json({message: 'Usuario no encontrado'})
+            return
+        }
+        const token = generateToken({id: searchUser._id, username: searchUser.username, role: null})
+        res.cookie('token', token, { httpOnly: true, secure: process.env.NODE_ENV === 'production' })
+
+        res.status(200).json({ message: 'Success login', token });
+    } catch (error) {
+        res.status(500).json({ message: error });
+    }
+}
+
+const logout = (_req:Request, res:Response)=>{
+    res.cookie('token', '', {httpOnly: true, secure: process.env.NODE_ENV === 'production'})
+    res.status(200).json({message: 'Success logout'})
+}
+
+export default {getUser, createUser, deleteUser, updateUser, login, logout}

@@ -11,6 +11,8 @@ router.get('/home/admin', authAdmin, (_req, res)=>{
     res.json({ message: `Welcome ${user.username}` });
 }) // Esto es para verificar la protección de la ruta
 router.post('/logout/admin', authAdmin, adminController.logout)
-
+router.put('/update/admin/:id', authAdmin, adminController.updateAdmin)
+router.get('/get/admins', adminController.getAdmins)
+router.delete('/delete/admin/:id', authAdmin ,adminController.deleteAdmin)
 
 export default router
