@@ -12,14 +12,14 @@ const getUser = async(_req:Request, res:Response):Promise<void>=>{
 }
 
 const createUser = async (req: Request, res: Response): Promise<void> => {
-    const { name, surname, mail, birth, location, postalcode, phone, password } = req.body;
+    const { name, surname, username, mail, birth, location, postalcode, phone, password } = req.body;
 
-    if (!name || !surname || !mail || !birth || !location || !postalcode || !phone || !password) {
+    if (!name || !surname || !username || !mail || !birth || !location || !postalcode || !phone || !password) {
         res.status(400).json({ message: 'Todos los campos son requeridos' });
         return;
     }
 
-    const user = new User({ name, surname, mail, birth, location, postalcode, phone, password });
+    const user = new User({ name, surname, username, mail, birth, location, postalcode, phone, password });
 
     try {
         const result = await user.save();
@@ -47,15 +47,15 @@ const deleteUser = async(req:Request, res:Response):Promise<void> =>{
 }
 
 const updateUser = async(req:Request, res:Response):Promise<void>=>{
-    const { name, surname, mail, birth, location, postalcode, phone, password } = req.body;
+    const { name, surname, username, mail, birth, location, postalcode, phone, password } = req.body;
     const idUser = req.params.id
-    if (!name || !surname || !mail || !birth || !location || !postalcode || !phone || !password) {
-        res.status(400).json({ message: 'Todos los campos son requeridos' });
-        return;
-    }
+    //if (!name || !surname || !username || !mail || !birth || !location || !postalcode || !phone || !password) {
+    //    res.status(400).json({ message: 'Todos los campos son requeridos' });
+    //    return;
+   // }
     try {
         const updateUser = await User.findByIdAndUpdate(idUser, 
-            {name, surname, mail, birth, location, postalcode, phone, password},
+            {name, surname, username, mail, birth, location, postalcode, phone, password},
             {new: true})
 
         if(!updateUser) {

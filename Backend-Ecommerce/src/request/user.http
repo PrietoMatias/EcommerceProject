@@ -1,0 +1,59 @@
+### GET USERS
+
+GET http://localhost:3000/api/get/users
+
+### CREATE USER
+
+POST http://localhost:3000/api/register 
+Content-Type: application/json
+
+{
+    "name": "Patricio",
+    "surname": "Fernández",
+    "username": "patitofeliz",
+    "mail" : "patitomimoso@gmail.com",
+    "birth": "2002/02/28",
+    "location": "San Miguél de Tucumán",
+    "postalcode": 4000,
+    "phone": "3816052122",
+    "password": "soytupatitovaca"
+}
+
+### LOGIN USER
+
+POST http://localhost:3000/api/user/login 
+Content-Type: application/json
+
+{
+    "user": "patitofeliz",
+    "password": "soytupatitovaca"
+}
+
+
+### UPDATE USER
+
+PUT http://localhost:3000/api/user/update/66a936a045ae21697e2ff822
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YTkzNmEwNDVhZTIxNjk3ZTJmZjgyMiIsInVzZXJuYW1lIjoicGF0aXRvZmVsaXoiLCJyb2xlIjpudWxsLCJpYXQiOjE3MjIzNjU3NzQsImV4cCI6MTcyMjM2OTM3NH0.slF_C6THH2J_O2IH-Pyw4CJIuRzf3EIlPnpXA_gwKdk
+
+{
+    "name": "Patriciooo",
+    "surname": "Fernández",
+    "username": "patitofeliz",
+    "mail" : "patitomimoso@gmail.com",
+    "birth": "2002/02/28",
+    "location": "San Miguél de Tucumán",
+    "postalcode": 4000,
+    "phone": "3816052122",
+    "password": "soytupatitovaca"
+}
+
+
+### LOGOUT USER
+
+POST http://localhost:3000/api/user/logout 
+
+
+### DELETE USER
+
+DELETE http://localhost:3000/api/delete/user/66a936a045ae21697e2ff822
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YTkzNmEwNDVhZTIxNjk3ZTJmZjgyMiIsInVzZXJuYW1lIjoicGF0aXRvZmVsaXoiLCJyb2xlIjpudWxsLCJpYXQiOjE3MjIzNjU3NzQsImV4cCI6MTcyMjM2OTM3NH0.slF_C6THH2J_O2IH-Pyw4CJIuRzf3EIlPnpXA_gwKdk

@@ -49,3 +49,9 @@
 - Cambios en la interfaz de `tokePlayload` y en la función  `generateToken` para que permita rol nulo
 - Controladores sin testear por falta de tiempo.
 - Rutas protegidas sin comprobar 
+
+
+## Prieto Matías - Actualización: 30/07/2024
+- Probado los endpoints y rutas protegidas.
+- Bug que no me permite crear los usuarios porque campos figuran como incompletos o invalidos
+- `user.http` creado para solicitudes

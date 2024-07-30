@@ -2,6 +2,15 @@
 
 Todos los cambios importantes en este proyecto se documentarán en este archivo. Una visión mas técnica de los cambios y los repositorios como tal. **IMPORTANTE**: Los cambios van desde abajo para arriba, siendo arriba los cambios más actuales.
 
+## [1.0.2] - 2024-07-30
+### Testeado
+- Controladores y endpoints de crear usuarios
+- Rutas protegidas de los usuarios
+- Login y Logout de usuarios
+- Error al comprobar los campos de los usuarios
+### Añadido
+- `user.http` para realizar consultas http y mandar peticiones al controlador usuarios.
+
 ## [1.0.2] - 2024-07-29
 ### Añadido
 - Controlador de actualizar, eliminar con sus correspondientes rutas en administradores.
