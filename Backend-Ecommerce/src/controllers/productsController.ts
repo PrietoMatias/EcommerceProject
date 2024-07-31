@@ -51,10 +51,14 @@ const updateByID = async (req:Request, res:Response):Promise<void>=>{
     }
 }
 const getByName = async (req:Request, res:Response):Promise<void> =>{
-    const name = req.body
+    const {name} = req.body
     try {
         const findbyName = await Products.find({name: name})
+        if(findbyName.length === 0){
+            res.status(404).json({message: 'Invalid Product'})
+        }
         res.status(200).json(findbyName)
+        
     } catch (error) {
         res.status(500).json({message: error})
     }

@@ -55,3 +55,7 @@
 - Probado los endpoints y rutas protegidas.
 - Bug que no me permite crear los usuarios porque campos figuran como incompletos o invalidos
 - `user.http` creado para solicitudes
+
+## Prieto Matías - Actualización: 31/07/2024
+- Agregado endpoint y protección a rutas de productos *(Agregado, modificacion, edición...)*
+- Agregado un solo controlador de carritos, y rutas protegias de carrito

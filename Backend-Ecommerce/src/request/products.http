@@ -1,0 +1,35 @@
+### GET ALL PRODUCTS
+
+GET http://localhost:3000/api/get/products
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YTAzNDE1NWVmYmUxZGNjNDc2NGRlNiIsInVzZXJuYW1lIjoibWFyeTEyMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMjI3MDQxNiwiZXhwIjoxNzIyMjc0MDE2fQ.Nh-WabTGpv8o6AeyxpoJcHV6wRzNqQW3yHsDdcnsQJI
+
+### CREATE PRODUCT
+
+POST http://localhost:3000/api/create/product
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YTAzNDE1NWVmYmUxZGNjNDc2NGRlNiIsInVzZXJuYW1lIjoibWFyeTEyMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMjI3MDQxNiwiZXhwIjoxNzIyMjc0MDE2fQ.Nh-WabTGpv8o6AeyxpoJcHV6wRzNqQW3yHsDdcnsQJI
+Content-Type: application/json
+
+{
+    "name": "Camiseta Negra Genérica", 
+    "description": "Camiseta de algodón", 
+    "price": 15.000, 
+    "stock": 8, 
+    "category": "Camiseta", 
+    "images": "none", 
+    "sizes": "S, XS, M, L, XL", 
+    "colors": "rojo, azul, negro, blanco, nieve"
+}
+
+
+
+
+
+### GET BY NAME
+
+POST http://localhost:3000/api/get/product
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YTAzNDE1NWVmYmUxZGNjNDc2NGRlNiIsInVzZXJuYW1lIjoibWFyeTEyMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMjI3MDQxNiwiZXhwIjoxNzIyMjc0MDE2fQ.Nh-WabTGpv8o6AeyxpoJcHV6wRzNqQW3yHsDdcnsQJI
+Content-Type: application/json
+
+{
+    "name" : "Camiseta de algodón"
+}

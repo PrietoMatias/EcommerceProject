@@ -8,6 +8,7 @@ import bodyParser from 'body-parser'
 import dotenv from 'dotenv';
 import { generateSecret } from './src/utils/secret';
 import cookieParser from 'cookie-parser'
+import routerCart from './src/routers/routerCart'
 
 const startServer = async ():Promise<void>=>{
     await connection()
@@ -27,6 +28,7 @@ const startServer = async ():Promise<void>=>{
     app.use('/api', routerUser)
     app.use('/api', routerProducts)
     app.use('/api', routerAdmin)
+    app.use('/api', routerCart)
     
     app.listen(3000, ()=>{
         console.log('server on port http://localhost:3000')
