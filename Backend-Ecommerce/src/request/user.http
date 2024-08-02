@@ -33,10 +33,10 @@ Content-Type: application/json
 ### UPDATE USER
 
 PUT http://localhost:3000/api/user/update/66a936a045ae21697e2ff822
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YTkzNmEwNDVhZTIxNjk3ZTJmZjgyMiIsInVzZXJuYW1lIjoicGF0aXRvZmVsaXoiLCJyb2xlIjpudWxsLCJpYXQiOjE3MjIzNjU3NzQsImV4cCI6MTcyMjM2OTM3NH0.slF_C6THH2J_O2IH-Pyw4CJIuRzf3EIlPnpXA_gwKdk
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWQxNDM5MzMxMTI1YTI0NjUyOTkxYyIsInVzZXJuYW1lIjoicGF0aXRvZmVsaXoiLCJyb2xlIjpudWxsLCJpYXQiOjE3MjI2MjI0NzMsImV4cCI6MTcyMjYyNjA3M30._CUkdqwCEI_bwDjQ5uZi4_kDp0JgtprCVYaGpcoycrA
 
 {
-    "name": "Patriciooo",
+    "name": "Patricioodo",
     "surname": "Fernández",
     "username": "patitofeliz",
     "mail" : "patitomimoso@gmail.com",

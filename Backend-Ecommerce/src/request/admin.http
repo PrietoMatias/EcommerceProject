@@ -34,7 +34,7 @@ Content-Type: application/json
 ### VERIFICAR SI EL TOKEN SE INCLUYÓ CORRECTAMENTE
 
 GET http://localhost:3000/api/home/admin
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YTAzNDE1NWVmYmUxZGNjNDc2NGRlNiIsInVzZXJuYW1lIjoibWFyeTEyMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMTc3NTUxMSwiZXhwIjoxNzIxNzc5MTExfQ.xw46X099l1w0tursGVad_glnCRT0H61_vRMv7-S9-ww
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YTAzNDE1NWVmYmUxZGNjNDc2NGRlNiIsInVzZXJuYW1lIjoibWFyeTEyMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMjYyMTQwMCwiZXhwIjoxNzIyNjI1MDAwfQ.7wMEhMDUhTGQZA5kb3aitdYPK7cBC907Ot1fcSyhKL0
 
 ### LOGOUT
 

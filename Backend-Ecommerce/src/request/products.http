@@ -27,9 +27,9 @@ Content-Type: application/json
 ### GET BY NAME
 
 POST http://localhost:3000/api/get/product
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YTAzNDE1NWVmYmUxZGNjNDc2NGRlNiIsInVzZXJuYW1lIjoibWFyeTEyMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMjI3MDQxNiwiZXhwIjoxNzIyMjc0MDE2fQ.Nh-WabTGpv8o6AeyxpoJcHV6wRzNqQW3yHsDdcnsQJI
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWQxNDM5MzMxMTI1YTI0NjUyOTkxYyIsInVzZXJuYW1lIjoicGF0aXRvZmVsaXoiLCJyb2xlIjpudWxsLCJpYXQiOjE3MjI2MTkwODAsImV4cCI6MTcyMjYyMjY4MH0.sggQX6Zb-PSzflYIOa_daBIGQBQKnoW1wQ3mnpiXyyc
 Content-Type: application/json
 
 {
-    "name" : "Camiseta de algodón"
+    "name" : "Camiseta Negra Genérica"
 }

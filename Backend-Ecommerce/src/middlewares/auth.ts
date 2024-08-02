@@ -1,7 +1,8 @@
-import { Request, Response, NextFunction } from "express";
-import { verifyToken } from "../config/jsw";
+import { Request, Response, NextFunction } from 'express';
+import { verifyToken } from '../config/jsw'; // Asegúrate de ajustar la importación según tu configuración
 
-export const authAdmin = (req: Request, res: Response, next: NextFunction): void => {
+
+export const auth = (req: Request, res: Response, next: NextFunction): void => {
   const token = req.cookies.token;
   if (!token) {
     res.status(401).json({ message: 'Unauthorized' });
@@ -10,30 +11,14 @@ export const authAdmin = (req: Request, res: Response, next: NextFunction): void
 
   try {
     const decoded = verifyToken(token);
-
-    if (decoded.role !== 'admin') {
+    console.log('Decoded token:', decoded);
+    if (decoded.role !== 'admin' && decoded.role !== null) {
       res.status(403).json({ message: 'Forbidden' });
       return;
     }
 
     res.locals.user = decoded;
-    next();
-  } catch (error) {
-    res.status(401).json({ message: 'Invalid Token' });
-  }
-};
 
-export const authUser = (req: Request, res: Response, next: NextFunction): void => {
-  const token = req.cookies.token;
-  if (!token) {
-    res.status(401).json({ message: 'Unauthorized' });
-    return;
-  }
-
-  try {
-    const decoded = verifyToken(token);
-
-    res.locals.user = decoded;
     next();
   } catch (error) {
     res.status(401).json({ message: 'Invalid Token' });

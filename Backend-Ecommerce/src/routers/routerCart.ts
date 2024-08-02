@@ -1,9 +1,8 @@
 import { Router } from "express";
 import cartController from "../controllers/cartController";
-import { authUser } from "../middlewares/auth";
-
+import { auth } from "../middlewares/auth";
 const router:Router = Router()
 
-router.post('add/cart/', authUser, cartController.addCart)
+router.post('add/cart/', auth, cartController.addCart)
 
 export default router

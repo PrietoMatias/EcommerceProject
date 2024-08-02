@@ -14,3 +14,4 @@ export const generateToken = (playload: { id: unknown, username: string, role: s
 export const verifyToken = (token:string):TokenPayload=>{
     return jwt.verify(token, secret) as TokenPayload
 }
+

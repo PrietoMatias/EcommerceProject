@@ -2,6 +2,12 @@
 
 Todos los cambios importantes en este proyecto se documentarán en este archivo. Una visión mas técnica de los cambios y los repositorios como tal. **IMPORTANTE**: Los cambios van desde abajo para arriba, siendo arriba los cambios más actuales.
 
+
+## [1.0.3] - 2024-08-02
+### Modificado
+- `authUser` y `authAdmin` se fusionaron en `auth`, que cumpliría las dos tareas
+
+
 ## [1.0.3] - 2024-07-31
 ### Añadido
 - Controlador de carrito, con una sola función de de agregado al carrito **Sin Testear**
