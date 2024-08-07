@@ -3,6 +3,12 @@
 Todos los cambios importantes en este proyecto se documentarán en este archivo. Una visión mas técnica de los cambios y los repositorios como tal. **IMPORTANTE**: Los cambios van desde abajo para arriba, siendo arriba los cambios más actuales.
 
 
+## [1.1.1] - 2024-08-08
+### Añadido
+- Controladores de Proveedores e Inventario
+# Falta
+- Respectivos `ENDPOINTS`
+
 ## [1.1.0] - 2024-08-07
 ### Añadido
 - Controlador de órdenes :

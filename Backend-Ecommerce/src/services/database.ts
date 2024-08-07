@@ -1,17 +1,23 @@
-import mongoose from 'mongoose'
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
 
-//Add the extension of MongoDB for VScode and page this connection string
-const uri: string = 'mongodb+srv://gentsgentleman:gentsgentleman7743@clauster1.zfn7x48.mongodb.net/EcommerceFlowerClothes?retryWrites=true&w=majority';
+dotenv.config();
 
+const uri: string | undefined = process.env.CONECTION_STRING;
 
-const connection = async():Promise<void> =>{
+if (!uri) {
+    console.error('Error: CONECTION_STRING no está definido en el archivo .env');
+    process.exit(1);
+}
+
+const connection = async (): Promise<void> => {
     try {
-       await mongoose.connect(uri)
-        console.log('Success to connect at database')
+        await mongoose.connect(uri);
+        console.log('Éxito al conectar con la base de datos');
     } catch (error) {
-        console.log('Error, ' + error)
-        process.exit(1) //This line ends the process if cannot connect to database
+        console.error('Error, ' + error);
+        process.exit(1);
     }
 }
 
-export default connection
+export default connection;

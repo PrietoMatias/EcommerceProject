@@ -10,7 +10,7 @@ export interface IContacts{
 export interface ISuppliers extends Document{
     name: string;
     contacts: IContacts[];
-    products: ObjectId;
+    products: ObjectId[];
 }
 
 export const Suppliers: Model<ISuppliers> = mongoose.model<ISuppliers>('Suppliers', schemaSuppliers)
