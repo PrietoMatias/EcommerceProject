@@ -76,7 +76,7 @@ const login = async (req:Request, res:Response):Promise<void>=>{
             res.status(404).json({message: 'Usuario no encontrado'})
             return
         }
-        const token = generateToken({id: searchUser._id, username: searchUser.username, role: null})
+        const token = generateToken({id: searchUser._id, username: searchUser.username, role: 'user'})
         res.cookie('token', token, { httpOnly: true, secure: process.env.NODE_ENV === 'production' })
 
         res.status(200).json({ message: 'Success login', token });

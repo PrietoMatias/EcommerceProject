@@ -1,0 +1,17 @@
+### ADD PRODUCT TO CART
+
+POST http://localhost:3000/api/add/cart 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWQxNDM5MzMxMTI1YTI0NjUyOTkxYyIsInVzZXJuYW1lIjoicGF0aXRvZmVsaXoiLCJyb2xlIjpudWxsLCJpYXQiOjE3MjI2MzIyNTUsImV4cCI6MTcyMjYzNTg1NX0.cPADlb2XhBxtaIZrKkMQsulyy-8eYXpxqTGTa4YZBjQ
+Content-Type: application/json
+
+{
+    "idProduct": "66aa75704a156f0d9672e81a",
+    "quantity": "2",
+    "colors": ["azul", "rojo", "negro", "negro", "nieve"]
+}
+
+
+### GET CART USER
+
+GET http://localhost:3000/api/get/cart 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWQxNDM5MzMxMTI1YTI0NjUyOTkxYyIsInVzZXJuYW1lIjoicGF0aXRvZmVsaXoiLCJyb2xlIjpudWxsLCJpYXQiOjE3MjI2MzIyNTUsImV4cCI6MTcyMjYzNTg1NX0.cPADlb2XhBxtaIZrKkMQsulyy-8eYXpxqTGTa4YZBjQ

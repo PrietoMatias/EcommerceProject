@@ -3,6 +3,16 @@
 Todos los cambios importantes en este proyecto se documentarán en este archivo. Una visión mas técnica de los cambios y los repositorios como tal. **IMPORTANTE**: Los cambios van desde abajo para arriba, siendo arriba los cambios más actuales.
 
 
+## [1.1.0] - 2024-08-07
+### Añadido
+- Controlador de órdenes :
+- **MakeOrder**: Hace una órden
+- **CancelOrder**: Cancela una orden 
+- **getAllOrders**: Obtiene una lista de órdenes
+- **getUserOrder**: Obtiene la órden de un usuario
+### Corregido
+- Errores que no dejaban funcionar los controladores de administradores  
+
 ## [1.0.3] - 2024-08-02
 ### Modificado
 - `authUser` y `authAdmin` se fusionaron en `auth`, que cumpliría las dos tareas

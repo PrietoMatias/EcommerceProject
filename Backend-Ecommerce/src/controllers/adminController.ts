@@ -31,6 +31,11 @@ const createAdmin = async (req:Request, res:Response):Promise<void> =>{
         return
     }
 
+    if(res.locals.user.role != 'admin'){
+        res.status(403).json({message: 'Forbidden'})
+        return
+    }
+
     const addAdmin = new Admin({name, surname, username, password, mail, birth, location, role, number_phone})
     
     try {
@@ -50,6 +55,10 @@ const updateAdmin = async (req: Request, res: Response): Promise<void> => {
      //   res.status(400).json({ message: 'Todos los campos son requeridos' });
      //   return;
     //}
+    if(res.locals.user.role != 'admin'){
+        res.status(403).json({message: 'Forbidden'})
+        return
+    }
 
     try {
         const updatedAdmin = await Admin.findByIdAndUpdate(
@@ -69,6 +78,10 @@ const updateAdmin = async (req: Request, res: Response): Promise<void> => {
     }
 }
 const getAdmins = async (_req:Request, res:Response):Promise<void>=>{
+    if(res.locals.user.role != 'admin'){
+        res.status(403).json({message: 'Forbidden'})
+        return
+    }
     try {
         const getAdmins = await Admin.find()
         res.status(200).json({getAdmins})
@@ -79,6 +92,10 @@ const getAdmins = async (_req:Request, res:Response):Promise<void>=>{
 
 const deleteAdmin = async (req:Request, res:Response):Promise<void>=>{
     const idAdmin = req.params.id
+    if(res.locals.user.role != 'admin'){
+        res.status(403).json({message: 'Forbidden'})
+        return
+    }
     try {
         const deleteAdmin = Admin.findByIdAndDelete(idAdmin)
         if(!deleteAdmin){

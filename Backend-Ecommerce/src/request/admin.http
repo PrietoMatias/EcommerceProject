@@ -44,7 +44,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YTAzNDE1N
 
 ###  UPDATE ADMIN
 PUT http://localhost:3000/api/update/admin/66a03b425efbe1dcc4764de9
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YTAzNDE1NWVmYmUxZGNjNDc2NGRlNiIsInVzZXJuYW1lIjoibWFyeTEyMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMjI2NjQwOCwiZXhwIjoxNzIyMjcwMDA4fQ.IcdetRS6UPTDOezJrCMywr_UPpbuLWrwZn8l7SKUsmM
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWQxNDM5MzMxMTI1YTI0NjUyOTkxYyIsInVzZXJuYW1lIjoicGF0aXRvZmVsaXoiLCJyb2xlIjoidXNlciIsImlhdCI6MTcyMjk1OTI0MSwiZXhwIjoxNzIyOTYyODQxfQ.7wssjsZIk9eCG8IgfMnBrZuL2Rr-P2Es05XXVXlhVE8
 
 {
     "name": "Matías",

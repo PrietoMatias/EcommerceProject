@@ -12,7 +12,7 @@ export const auth = (req: Request, res: Response, next: NextFunction): void => {
   try {
     const decoded = verifyToken(token);
     console.log('Decoded token:', decoded);
-    if (decoded.role !== 'admin' && decoded.role !== null) {
+    if (decoded.role !== 'admin' && decoded.role !== 'user') {
       res.status(403).json({ message: 'Forbidden' });
       return;
     }

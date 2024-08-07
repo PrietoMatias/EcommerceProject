@@ -59,3 +59,8 @@
 ## Prieto Matías - Actualización: 31/07/2024
 - Agregado endpoint y protección a rutas de productos *(Agregado, modificacion, edición...)*
 - Agregado un solo controlador de carritos, y rutas protegias de carrito
+
+## Prieto Matías - Actualización: 07/08/2024
+- Agregado controladores de órdenes (`makeOrderUser`, `getallOrders`, `getUserOrder`, `cancelOrder`)
+- Corrección de errores menores.
+- Falta testeteo de controladores y construcción de endpoints
