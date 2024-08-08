@@ -4,7 +4,7 @@ import { generateToken } from '../config/jsw'
 
 const login = async(req:Request, res:Response):Promise<void>=>{
     const {user, password} = req.body
-    try {
+    try { 
         const searchAdmin = await Admin.findOne({username: user, password: password})
         if(!searchAdmin){
             res.status(404).json({message: 'Usuario no encontrado'})
@@ -29,8 +29,8 @@ const createAdmin = async (req:Request, res:Response):Promise<void> =>{
     if(!name || !surname || !username || !password || !birth || !location || !role || !number_phone){
         res.status(400).json({message: 'Todos los campos son requeridos'})
         return
-    }
-
+    } 
+    console.log('res.locals.user:', res.locals.user)
     if(res.locals.user.role != 'admin'){
         res.status(403).json({message: 'Forbidden'})
         return
@@ -78,12 +78,14 @@ const updateAdmin = async (req: Request, res: Response): Promise<void> => {
     }
 }
 const getAdmins = async (_req:Request, res:Response):Promise<void>=>{
+    console.log('res.locals.user:', res.locals.user)
+    
     if(res.locals.user.role != 'admin'){
         res.status(403).json({message: 'Forbidden'})
         return
     }
     try {
-        const getAdmins = await Admin.find()
+        const getAdmins = await Admin.find({isDeleted: false})
         res.status(200).json({getAdmins})
     } catch (error) {
         res.status(500).json({message:error})
@@ -97,7 +99,13 @@ const deleteAdmin = async (req:Request, res:Response):Promise<void>=>{
         return
     }
     try {
-        const deleteAdmin = Admin.findByIdAndDelete(idAdmin)
+        const deleteAdmin = await Admin.findByIdAndUpdate(
+            {idAdmin},
+            {isDeleted: true,
+             deleteAt: Date.now()   
+            },
+            {new: true}
+       )
         if(!deleteAdmin){
             res.status(404).json({message: 'Administrado inexistente'})
             return

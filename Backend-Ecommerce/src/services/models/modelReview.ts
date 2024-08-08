@@ -7,6 +7,8 @@ export interface IReview extends Document{
     calification: number;
     comment: string;
     datereview: Date;
+    isDeleted: Boolean; 
+    deleteAt: Date;
 }
 
 export const Review: Model<IReview> = mongoose.model<IReview>('Review', schemaReview)

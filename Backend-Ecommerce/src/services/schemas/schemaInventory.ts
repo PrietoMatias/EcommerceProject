@@ -7,7 +7,10 @@ const schemaInventory = new Schema({
         color: {type: String, required: true},
         stock: {type: Number, required: true}
     }],
-    lastUpdated: {type: Date, default: Date.now}
+    lastUpdated: {type: Date, default: Date.now},
+    isDeleted: {type:Boolean, default: false},
+    deleteAt: {type: Date}
+
 })
 
 

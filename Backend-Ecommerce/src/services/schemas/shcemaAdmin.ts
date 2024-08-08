@@ -10,6 +10,8 @@ const schemaUser = new Schema({
     location: {type: String, required: true},
     role: {type: String, required: true},
     number_phone: {type: String, required: true},
+    isDeleted: {type:Boolean, default: false},
+    deleteAt: {type: Date}
 })
 
 export default schemaUser

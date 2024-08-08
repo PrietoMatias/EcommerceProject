@@ -10,7 +10,9 @@ const schemaSuppliers = new Schema({
             location: {type: String, require: true}
         }
     ],
-    products: [{type: Schema.Types.ObjectId, ref: 'Product', required: true}]
+    products: [{type: Schema.Types.ObjectId, ref: 'Product', required: true}],
+    isDeleted: {type:Boolean, default: false},
+    deleteAt: {type: Date}
 })
 
 export default schemaSuppliers

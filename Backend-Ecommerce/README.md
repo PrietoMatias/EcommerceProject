@@ -66,3 +66,7 @@
 - Falta testeteo de controladores y construcción de endpoints
 - Agregado controladores de inventario y de proveedores 
 - Pienso en agregar un borrado lógico para seguir teniendo cualquier tipo de registro que necesite en el futuro
+
+## Prieto Matías - Actualización: 08/08/2024
+- Actualización de los esquemas y modelos para permitir un eliminado virtual
+- Aparición de un error en el momento de crear un administrador

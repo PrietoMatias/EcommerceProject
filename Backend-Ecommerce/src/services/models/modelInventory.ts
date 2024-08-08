@@ -11,6 +11,8 @@ export interface IInventory extends Document {
     product_id: ObjectId;
     variants: IVariants[];
     lastupdate: Date;
+    isDeleted: Boolean, 
+    deleteAt: Date
 }
 
 export const Inventory: Model<IInventory> = mongoose.model<IInventory>('Inventory', schemaInventory)

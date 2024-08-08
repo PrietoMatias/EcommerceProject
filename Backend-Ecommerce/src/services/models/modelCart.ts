@@ -11,6 +11,8 @@ export interface ICart extends Document{
     user_id: ObjectId;
     products: IProducts[];
     datecreated: Date;
+    isDeleted: Boolean; 
+    deleteAt: Date;
 }
 
 

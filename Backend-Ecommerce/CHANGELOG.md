@@ -3,6 +3,12 @@
 Todos los cambios importantes en este proyecto se documentarán en este archivo. Una visión mas técnica de los cambios y los repositorios como tal. **IMPORTANTE**: Los cambios van desde abajo para arriba, siendo arriba los cambios más actuales.
 
 
+## [1.1.2] 2024-08-08
+### Cambiado
+- Actualición de los esquemas y modelos para permitir un `SOFT-DELETED`
+### Errores
+- En el momento de crear un administrador.
+
 ## [1.1.1] - 2024-08-08
 ### Añadido
 - Controladores de Proveedores e Inventario

@@ -71,6 +71,6 @@ const deleteSupplier = async (req:Request, res:Response):Promise<void>=>{
     try {
         const deleteSupplier = await Suppliers
     } catch (error) {
-        
+        res.status(500).json({message:'Error interno del servidor', error})
     }
 }

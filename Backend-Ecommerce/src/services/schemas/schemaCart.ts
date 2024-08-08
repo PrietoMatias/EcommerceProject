@@ -8,7 +8,9 @@ const schemaCart = new Schema({
         quantity: {type: Number, required:true},
         colors: {type: [String], required: true}
     }],
-    datecreated: {type: Date, default: Date.now}
+    datecreated: {type: Date, default: Date.now},
+    isDeleted: {type:Boolean, default: false},
+    deleteAt: {type: Date}
 })
 
 export default schemaCart

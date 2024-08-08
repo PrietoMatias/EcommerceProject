@@ -10,7 +10,9 @@ export interface IAdmin extends Document{
     birth: Date,
     location: string,
     role: string,
-    number_phone: string
+    number_phone: string,
+    isDeleted: Boolean, 
+    deleteAt: Date
 }
 
 export const Admin: Model<IAdmin> = mongoose.model<IAdmin>('Admin', schemaAdmin)

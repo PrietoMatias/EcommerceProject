@@ -19,6 +19,8 @@ export interface IUser extends Document {
   phone: string;
   password: string;
   dateregist: Date;
+  isDeleted: Boolean; 
+  deleteAt: Date;
 }
   
   export const User: Model<IUser> = mongoose.model<IUser>('User', schemaUser);

@@ -2,22 +2,24 @@
 
 POST http://localhost:3000/api/create/admin
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YTAzNDE1NWVmYmUxZGNjNDc2NGRlNiIsInVzZXJuYW1lIjoibWFyeTEyMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMzEzNDE5OSwiZXhwIjoxNzIzMTM3Nzk5fQ.XWJ3fAfVu4V_osaVFL5e4Yk9mfIPwhXkF3EPnF_H9H8
 
 {
-    "name": "Patito",
-    "surname": "Mimoso",
-    "username": "mati123",
+    "name": "esteban",
+    "surname": "prieto",
+    "username": "prieto1",
     "password": "mati1",
-    "mail": "matias132@gmail.com",
+    "mail": "matiasesteban132@gmail.com",
     "birth": "01/08/2004",
     "location": "San Miguél de Tucuman",
-    "role": "supervisor",
+    "role": "admin",
     "number_phone": "3816079212"
 }
 
 ### GET ADMINS
 
 GET http://localhost:3000/api/get/admins
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YTAzNDE1NWVmYmUxZGNjNDc2NGRlNiIsInVzZXJuYW1lIjoibWFyeTEyMyIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTcyMzEzMjc2NCwiZXhwIjoxNzIzMTM2MzY0fQ.XspCc4arpKBhk6M90Z4ALflrOeST7UuG2Em08X1yyhc
 
 
 ### LOGIN ADMIN

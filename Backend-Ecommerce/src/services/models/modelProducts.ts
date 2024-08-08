@@ -11,6 +11,8 @@ export interface IProdcuts extends Document {
     sizes: [String];
     colors: [String];
     dateAdded: Date;
+    isDeleted: Boolean; 
+    deleteAt: Date;
 }
 
 export const Products: Model<IProdcuts> = mongoose.model<IProdcuts>('Products', schemaProducts);

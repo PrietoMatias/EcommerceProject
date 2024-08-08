@@ -9,7 +9,9 @@ const schemaProducts = new Schema({
     images: [String],
     sizes: [String],
     colors: [String],
-    dateAdded: {type: Date, default: Date.now}
+    dateAdded: {type: Date, default: Date.now},
+    isDeleted: {type:Boolean, default: false},
+    deleteAt: {type: Date}
 })
 
 export default schemaProducts

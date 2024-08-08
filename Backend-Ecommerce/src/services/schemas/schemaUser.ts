@@ -15,7 +15,9 @@ const schemaUser = new Schema({
     postalcode: {type: Number, required: true},
     phone: {type: String, required: true},
     password: {type: String, required: true},
-    dateregist: {type: Date, default: Date.now}
+    dateregist: {type: Date, default: Date.now},
+    isDeleted: {type:Boolean, default: false},
+    deleteAt: {type: Date}
 });
 
 export default schemaUser 
