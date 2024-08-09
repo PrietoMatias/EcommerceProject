@@ -49,7 +49,7 @@ const getCartUser = async (_req: Request, res: Response): Promise<void> => {
     const user = res.locals.user;
     const id = user.id;
     try {
-        const cart = await Cart.findOne({ user_id: id })
+        const cart = await Cart.findOne({ user_id: id, isDeleted: false })
             .populate({
                 path: 'products.product_id',
                 select: 'name description colors'
@@ -68,4 +68,25 @@ const getCartUser = async (_req: Request, res: Response): Promise<void> => {
     }
 };
 
-export default { addCart, getCartUser };
+
+const deleteCart = async(req:Request, res:Response):Promise<void>=>{
+    const idUser = req.params.id
+    try {
+        const deleteCart = await Cart.findOneAndUpdate(
+            {user_id:idUser},
+            {isDeleted:true, 
+             deleteAt: Date.now()
+            },
+            {new: true}
+        )
+        if(!deleteCart){
+            res.status(400).json({message:'No se pudo vaciar el carrito'})
+            return
+        }
+        res.status(200).json({message:'Carrito vaciado con éxito', deleteCart})
+    } catch (error) {
+        res.status(500).json({message:'Error interno del servidor', error})
+    }
+}
+
+export default { addCart, getCartUser, deleteCart };

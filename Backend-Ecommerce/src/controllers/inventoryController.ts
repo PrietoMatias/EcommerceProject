@@ -1,9 +1,9 @@
 import {Inventory} from '../services/models/modelInventory'
 import { Request, Response } from 'express'
 
-const getInventory = async (req:Request, res:Response):Promise<void>=>{
+const getInventory = async (_req:Request, res:Response):Promise<void>=>{
     try{
-        const getInventory = await Inventory.find()
+        const getInventory = await Inventory.find({isDeleted:false})
         if(!getInventory){
             res.status(404).json({message: 'Inventario no disponible'})
             return
@@ -70,7 +70,12 @@ const deleteInventory = async (req: Request, res: Response): Promise<void> => {
     try {
         const { id } = req.params;
 
-        const inventory = await Inventory.findByIdAndDelete(id);
+        const inventory = await Inventory.findByIdAndUpdate({_id: id},
+            {isDeleted: true,
+             deleteAt: Date.now()
+            },
+            {new: true}
+        );
 
         if (!inventory) {
             res.status(404).json({ message: 'Inventario no encontrado' });

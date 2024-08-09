@@ -69,8 +69,28 @@ const updateSupplier = async (req:Request, res:Response):Promise<void>=>{
 const deleteSupplier = async (req:Request, res:Response):Promise<void>=>{
     const id = req.params.id
     try {
-        const deleteSupplier = await Suppliers
+        const deleteSupplier = await Suppliers.findByIdAndUpdate(
+            {_id: id},
+            {isDeleted: true,
+             deleteAt: Date.now()
+            },
+            {new: true})
+        if(!deleteSupplier){
+            res.status(404).json({message:'Proveedor no encontrado'})
+            return
+        }
+        res.status(201).json({message: 'Proveedor eliminado con éxito'})
+
     } catch (error) {
         res.status(500).json({message:'Error interno del servidor', error})
     }
 }
+
+
+export default {
+                getSuppliers, 
+                searchSupplier, 
+                createSupplier, 
+                updateSupplier, 
+                deleteSupplier
+            }

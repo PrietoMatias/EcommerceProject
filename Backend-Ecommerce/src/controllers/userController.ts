@@ -4,7 +4,7 @@ import { generateToken } from "../config/jsw";
 //We must use "_" to take off the alert of unused parameters
 const getUser = async(_req:Request, res:Response):Promise<void>=>{
     try {
-        const users = await User.find()
+        const users = await User.find({isDeleted:false})
         res.status(200).json(users)
     } catch (error) {
         console.log('Error in getUser: ' + error)
@@ -35,7 +35,12 @@ const createUser = async (req: Request, res: Response): Promise<void> => {
 const deleteUser = async(req:Request, res:Response):Promise<void> =>{
     const id = req.params.id
     try {
-        const result = await User.findByIdAndDelete({_id: id})
+        const result = await User.findByIdAndUpdate({_id: id},
+            {isDeleted: true,
+              deleteAt: Date.now()
+            },
+            {new: true}
+        )
         if(!result){
             res.status(404).json({message: 'Usuario no encontrado'})
             return;

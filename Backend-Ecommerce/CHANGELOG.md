@@ -3,6 +3,13 @@
 Todos los cambios importantes en este proyecto se documentarán en este archivo. Una visión mas técnica de los cambios y los repositorios como tal. **IMPORTANTE**: Los cambios van desde abajo para arriba, siendo arriba los cambios más actuales.
 
 
+## [1.2.0] 2024-08-09
+### Añadido
+- Controladores de Review, y Suppliers
+- Respectivos ENDPOINTS que faltaban
+- Añadido `SOFT-DELETED` en todos los controladores
+- Falta testeo
+
 ## [1.1.2] 2024-08-08
 ### Cambiado
 - Actualición de los esquemas y modelos para permitir un `SOFT-DELETED`
@@ -12,7 +19,7 @@ Todos los cambios importantes en este proyecto se documentarán en este archivo.
 ## [1.1.1] - 2024-08-08
 ### Añadido
 - Controladores de Proveedores e Inventario
-# Falta
+### Falta
 - Respectivos `ENDPOINTS`
 
 ## [1.1.0] - 2024-08-07

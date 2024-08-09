@@ -3,7 +3,7 @@ import { Products } from "../services/models/modelProducts";
 
 const getAllProducts = async (_req:Request, res:Response):Promise<void>=>{
     try {
-        const products = await Products.find()
+        const products = await Products.find({isDeleted:false})
         if(!products){
             res.status(200).json({message: 'Sin productos registrados en el inventario'})
             return

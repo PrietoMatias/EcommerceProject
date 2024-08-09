@@ -70,3 +70,19 @@
 ## Prieto Matías - Actualización: 08/08/2024
 - Actualización de los esquemas y modelos para permitir un eliminado virtual
 - Aparición de un error en el momento de crear un administrador
+
+## Prieto Matías - Actualización: 09/08/2024
+- Añadido endpoints que faltaban (No falta ninguno)
+- Casi todos los controladores están con su respectiva funcionalidad
+- Solo falta testeo. Una vez testeado podemos proseguir creando la interfaz gráfica 
+# Notas del autor de commit:
+- Falta: 
+- **Pruebas de integración** *Librería sugerida: JEST*
+- **Pruebas de Testeo** *Librería sugerida: SUPERTEST*
+- **Pruebas de extremo a extremo** *Herramienta sugerida: CYPRESS*
+- **Validación de entradas** *Librería sugerida: JOI, VALIDATOR.JS*
+- **Configuración de CORS** *Librería sugerida: CORS*
+- **Protección contra ataques de fuerza bruta** *Librería sugerida: EXPRESS-RATE-LIMIT*
+- **Configuración de seguridad de headers** *Librería sugerida: HELMET*
+- **Protección CSRF** *Libería sugerida: CSRF*
+- Una vez terminado esto, podemos proseguir con el FRONT-END

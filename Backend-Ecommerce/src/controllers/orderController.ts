@@ -3,7 +3,7 @@ import { Order } from '../services/models/modelOrder';
 
 const getAllOrders = async (_req: Request, res: Response): Promise<void> => {
     try {
-        const orders = await Order.find();
+        const orders = await Order.find({isDeleted: false});
         res.status(200).json(orders);
     } catch (error) {
         res.status(500).json({ message: 'Error interno del servidor', error });
