@@ -4,14 +4,15 @@ import schemaCart from '../schemas/schemaCart';
 export interface IProducts{
     product_id: ObjectId;
     quantity: number;
-    colors: [string];
+    colors: [];
+    price: number
 }
 
 export interface ICart extends Document{
     user_id: ObjectId;
     products: IProducts[];
     datecreated: Date;
-    isDeleted: Boolean; 
+    isDeleted: boolean; 
     deleteAt: Date;
 }
 

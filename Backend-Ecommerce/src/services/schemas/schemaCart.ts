@@ -6,7 +6,8 @@ const schemaCart = new Schema({
     products:[{
         product_id:{type: Schema.Types.ObjectId, ref: 'Products', required: true},
         quantity: {type: Number, required:true},
-        colors: {type: [String], required: true}
+        colors: {type: [String], required: true},
+        price: {type: Number, required: true}
     }],
     datecreated: {type: Date, default: Date.now},
     isDeleted: {type:Boolean, default: false},

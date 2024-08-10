@@ -8,36 +8,45 @@ const addCart = async (req: Request, res: Response): Promise<void> => {
     const quantityNumber = parseInt(quantity, 10);
 
     try {
-        const StockComprobacion = await Products.findById(idProduct);
-        if (!StockComprobacion) {
+        
+        const product = await Products.findById(idProduct);
+        if (!product) {
             res.status(404).json({ message: 'Producto no encontrado' });
             return;
         }
-
-        if (StockComprobacion.stock < quantityNumber) {
+        if (product.stock < quantityNumber) {
             res.status(400).json({ message: 'Stock insuficiente' });
             return;
         }
-
         let cart = await Cart.findOne({ user_id: idUser });
         if (cart) {
-            // Si el carrito ya existe, agrega el nuevo producto a la lista
             const existingProductIndex = cart.products.findIndex(p => p.product_id.toString() === idProduct);
             if (existingProductIndex >= 0) {
-                // Si el producto ya está en el carrito, actualiza la cantidad
+ 
                 cart.products[existingProductIndex].quantity += quantityNumber;
             } else {
-                // Si el producto no está en el carrito, agrégalo
-                cart.products.push({ product_id: idProduct, quantity: quantityNumber, colors: colors });
+
+                cart.products.push({
+                    product_id: idProduct,
+                    quantity: quantityNumber,
+                    colors: colors || [], 
+                    price: product.price
+                });
             }
         } else {
-            // Si el carrito no existe, crea uno nuevo
+
             cart = new Cart({
                 user_id: idUser,
-                products: [{ product_id: idProduct, quantity: quantityNumber, colors: colors }]
+                products: [{
+                    product_id: idProduct,
+                    quantity: quantityNumber,
+                    colors: colors || [], // Asegúrate de manejar el caso en que `colors` puede ser `undefined`
+                    price: product.price
+                }]
             });
         }
 
+        // Guarda el carrito en la base de datos
         const result = await cart.save();
         res.status(200).json({ message: 'Producto agregado al carrito', result });
     } catch (error) {

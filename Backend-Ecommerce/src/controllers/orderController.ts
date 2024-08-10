@@ -1,17 +1,18 @@
 import { Request, Response } from 'express';
 import { Order } from '../services/models/modelOrder';
+import { Cart } from '../services/models/modelCart';
 
 const getAllOrders = async (_req: Request, res: Response): Promise<void> => {
     try {
-        const orders = await Order.find({isDeleted: false});
+        const orders = await Order.find();
         res.status(200).json(orders);
     } catch (error) {
         res.status(500).json({ message: 'Error interno del servidor', error });
     }
 };
 
-const getUserOrder = async (req: Request, res: Response): Promise<void> => {
-    const idUser = req.params.id;
+const getUserOrder = async (_req: Request, res: Response): Promise<void> => {
+    const idUser = res.locals.user.id;
     try {
         const orderUser = await Order.find({ user_id: idUser });
         if (!orderUser || orderUser.length === 0) {
@@ -25,10 +26,10 @@ const getUserOrder = async (req: Request, res: Response): Promise<void> => {
 };
 
 const cancelOrder = async (req: Request, res: Response): Promise<void> => {
-    const idOrder = req.params.id;
+    const {idOrder} = req.body
     try {
         const order = await Order.findByIdAndUpdate(
-            idOrder,
+            {_id: idOrder},
             { status: 'Cancelado' },
             { new: true }
         );
@@ -42,20 +43,34 @@ const cancelOrder = async (req: Request, res: Response): Promise<void> => {
     }
 };
 
-const makeOrder = async (req: Request, res: Response): Promise<void> => {
-    const { idUser, products, total } = req.body;
-    if (!idUser || !products || !total) {
-        res.status(400).json({ message: 'Todos los campos deben ser completados' });
-        return;
-    }
-    const order = new Order({ user_id: idUser, products, total, status: 'Pendiente' });
+const makeOrder = async (_req: Request, res: Response): Promise<void> => {
+    const idUser = res.locals.user.id;
+  
     try {
-        const addOrder = await order.save();
-        res.status(201).json({ message: 'Orden añadida con éxito', order: addOrder });
+        const cart = await Cart.findOne({ user_id: idUser }).exec();
+      
+      if (!cart) {
+        res.status(404).json({ message: 'Carrito no encontrado' });
+        return;
+      }
+      const products = cart.products;
+      const total = products.reduce((acc, product) => acc + (product.price * product.quantity), 0);
+  
+      const order = new Order({
+        user_id: idUser,
+        products: products, 
+        total
+      });
+  
+      await order.save();
+      await Cart.updateOne({ user_id: idUser }, { $set: { products: [] } });
+  
+      res.status(201).json({ message: 'Orden añadida con éxito', order });
     } catch (error) {
-        res.status(500).json({ message: 'Error interno del servidor', error });
+      res.status(500).json({ message: 'Error interno del servidor', error });
     }
-};
+  };
+
 
 export default {
     getAllOrders,

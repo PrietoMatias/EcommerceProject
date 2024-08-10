@@ -5,7 +5,7 @@ import { auth } from "../middlewares/auth";
 const router:Router = Router()
 
 router.get('/get/inventory', auth, inventoryController.getInventory)
-router.put('/get/one/inventory', auth, inventoryController.getOneInventory)
+router.get('/get/one/inventory', auth, inventoryController.getOneInventory)
 router.put('/update/inventory', auth, inventoryController.updateInventory)
 router.delete('/delete/inventory/:id', auth, inventoryController.deleteInventory)
 router.post('/create/inventory', auth, inventoryController.createInventory)

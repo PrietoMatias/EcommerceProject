@@ -1,0 +1,25 @@
+### GET REVIEW PRODUCT
+
+GET http://localhost:3000/api/get/product/review
+
+### MAKE REVIEW PRODUCT
+
+POST http://localhost:3000/api/make/review/product
+Content-Type: application/json
+
+{
+
+}
+
+### UPDATE REVIEW PRODUCT
+
+PUT http://localhost:3000/api/update/review/product 
+Content-Type: application/json
+
+{
+
+}
+
+### DELETE REVIEW PRODUCT
+
+DELETE http://localhost:3000/api/delete/review/product/ 

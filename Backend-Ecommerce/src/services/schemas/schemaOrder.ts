@@ -5,9 +5,9 @@ import { Schema } from "mongoose";
 //a servir para que la veamos reflejado en el historial de compras
 //entendes papilo?
 const schemaOrder = new Schema({
-    userId: {type: Schema.Types.ObjectId, ref: 'User', required: true},//esto referencia la coleccion del user
+    user_id: {type: Schema.Types.ObjectId, ref: 'User', required: true},//esto referencia la coleccion del user
     products: [{
-        productId: {type: Schema.Types.ObjectId, ref: 'Products', required: true},//referencia productos
+        product_id: {type: Schema.Types.ObjectId, ref: 'Products', required: true},//referencia productos
         quantity: {type: Number, required: true},
         price: {type: Number, required: true} 
     }],

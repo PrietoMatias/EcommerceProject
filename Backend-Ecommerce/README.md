@@ -75,7 +75,7 @@
 - Añadido endpoints que faltaban (No falta ninguno)
 - Casi todos los controladores están con su respectiva funcionalidad
 - Solo falta testeo. Una vez testeado podemos proseguir creando la interfaz gráfica 
-# Notas del autor de commit:
+### Notas del autor de commit:
 - Falta: 
 - **Pruebas de integración** *Librería sugerida: JEST*
 - **Pruebas de Testeo** *Librería sugerida: SUPERTEST*

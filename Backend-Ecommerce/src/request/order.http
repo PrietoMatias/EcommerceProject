@@ -1,0 +1,21 @@
+
+### GET ALL ORDERS
+GET http://localhost:3000/api/get/orders
+
+### GET ORDER USER
+
+GET http://localhost:3000/api/get/order/
+
+### CANCEL ORDER
+PUT http://localhost:3000/api/cancel/order
+Content-Type: application/json
+
+{
+    "idOrder": "66b7bdbffb6783ba1ecd9787"
+}
+
+### MAKE ORDER
+
+PUT http://localhost:3000/api/make/order
+
+

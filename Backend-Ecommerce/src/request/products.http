@@ -10,10 +10,10 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YTAzNDE1N
 Content-Type: application/json
 
 {
-    "name": "Camiseta Negra Genérica", 
-    "description": "Camiseta de algodón", 
-    "price": 15.000, 
-    "stock": 8, 
+    "name": "Camiseta de panam", 
+    "description": "Camiseta infantil para fiestas infantiles", 
+    "price": 20000, 
+    "stock": 20, 
     "category": "Camiseta", 
     "images": "none", 
     "sizes": "S, XS, M, L, XL", 

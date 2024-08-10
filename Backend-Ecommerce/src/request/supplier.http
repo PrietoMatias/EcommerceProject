@@ -1,0 +1,26 @@
+### GET ALL SUPPLIERS
+
+GET http://localhost:3000/api/get/supplier
+
+### SEARCH SUPPLIER
+
+POST http://localhost:3000/api/search/supplier
+Content-Type: application/json
+
+{
+
+}
+
+### UPDATE SUPPLIER
+
+PUT http://localhost:3000/api/update/supplier
+Content-Type: application/json
+
+{
+
+}
+
+### DELETE SUPPLIER 
+
+DELETE http://localhost:3000/api/delete/supplier/
+

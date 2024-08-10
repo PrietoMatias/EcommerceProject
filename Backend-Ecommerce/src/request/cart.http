@@ -5,12 +5,12 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY2YWQxNDM5M
 Content-Type: application/json
 
 {
-    "idProduct": "66aa75704a156f0d9672e81a",
-    "quantity": "2",
+    "idProduct": "66b7aeb69565b5f7b18a7110",
+    "quantity": "1",
     "colors": ["azul", "rojo", "negro", "negro", "nieve"]
 }
 
-
+ 
 ### GET CART USER
 
 GET http://localhost:3000/api/get/cart 
